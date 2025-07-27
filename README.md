@@ -1,243 +1,214 @@
-# Uber-Fare-Project
+# Uber-Fare-Project: NYC Ride Insights with Python & Power BI
 
-Detailed Analysis Report: Uber Fares Dataset
-Student: Uwase Tracy 27105  
-Course: Introduction to Big Data Analytics (INSY 8413)
-Instructor: Eric ManiraguhaDate: July 25, 2025
+**A Deep-Dive Analytical Report on Uber Rides in NYC**
 
-Table of Contents
+**Student:** Uwase Tracy (ID: 27105)  
+**Course:** INSY 8413 – Introduction to Big Data Analytics  
+**Instructor:** Eric Maniraguha  
+**Date:** July 25, 2025
 
-Executive Summary
+---
 
-Project Overview
+## Table of Contents
 
-Methodology & Tools
+- [Executive Summary](#executive-summary)  
+- [Project Overview](#project-overview)  
+- [Methodology and Tools](#methodology-and-tools)  
+- [Exploratory Data Analysis Highlights](#exploratory-data-analysis-highlights)  
+- [Fare Changes Over Time](#fare-changes-over-time)  
+- [Ride Trends by Hour, Day, Season](#ride-trends-by-hour-day-season)  
+- [Seasonal and Weather Effects](#seasonal-and-weather-effects)  
+- [Geographic Ride Patterns](#geographic-ride-patterns)  
+- [Power BI Dashboard Design](#power-bi-dashboard-design)  
+- [DAX Formulas and Measures](#dax-formulas-and-measures)  
+- [Business Insights and Implications](#business-insights-and-implications)  
+- [Conclusion](#conclusion)
 
-Exploratory Data Analysis Highlights
+---
 
-Fare Changes Over Time
+## Executive Summary
 
-Ride Trends by Hour, Day, Season
+This report uncovers patterns in Uber ride activity across New York City using data analysis and interactive dashboards. It applies Python for data wrangling and feature engineering, and Power BI for dashboard design and storytelling. The study investigates how temporal and spatial dimensions influence ride frequency, fare pricing, and customer demand. The final deliverable is a user-friendly Power BI dashboard offering real-time insights to support decisions in pricing, operations, and marketing.
 
-Seasonal and Weather Effects
+---
 
-Geographic Ride Patterns
+## Project Overview
 
-Power BI Dashboard Design
+The dataset, sourced from Kaggle, contains ride-level Uber data across NYC. The primary objective is to surface business-relevant patterns in the data to improve operational efficiency and strategic planning.
 
-Business Insights and Implications
+**Key areas of analysis include:**
 
-Conclusion
+- Time-based fare fluctuations and demand cycles  
+- Spatial hotspots of Uber activity  
+- Effects of seasonal shifts on ridership  
+- Identifying demand surges and underutilized periods  
+- Creating actionable dashboards for real-time use
 
-1. Executive Summary
+This project bridges the gap between raw data and business value, turning millions of records into clear, visual intelligence.
 
-This report explores the dynamics of Uber rides in New York City using data analytics and visualization. It aims to provide a high-level understanding of fare behaviors, demand fluctuations, and external influences such as time and weather proxies. The end product is an interactive that offers real-time insights for decision-makers.
+---
 
+## Methodology and Tools
 
+**Technologies Used:**
 
-2. Project Overview
+- Python (Jupyter Notebook): For data cleaning, exploration, and feature generation  
+- Power BI: To design an interactive dashboard from the refined dataset  
+- Libraries: `pandas`, `numpy`, `matplotlib`, `seaborn` for EDA and preprocessing
 
-The analysis began with a dataset from Kaggle containing details of individual Uber rides. This report focuses on identifying hidden patterns in:
+**Step-by-step Workflow:**
 
-Fare changes throughout the day and across seasons
+1. **Data Loading:** Initial CSV import using pandas  
+2. **Data Cleaning:** Removing nulls, duplicates, and formatting timestamps  
+3. **Outlier Detection:** Using the IQR method to exclude fare and distance outliers  
+4. **Feature Engineering:** Extracting hour, weekday, month, and creating season & time-of-day labels  
+5. **Visualization:** EDA charts using Python and Power BI dashboard for interactive exploration
 
-Ride frequency by hour and weekday
+**Data Preparation:**
 
-Seasonal variation using time proxies
+![Data loading](pictures/data_loading.png)  
+![Data cleaning](pictures/data_cleaning.png)
 
-Geographic concentration of ride activity
+---
 
-Strategic visual storytelling via Power BI
+## Exploratory Data Analysis Highlights
 
-3. Methodology & Tools
+The exploratory analysis focused on uncovering trends, patterns, and anomalies in the dataset. This guided the dashboard structure and business insights.
 
-Technologies Used:
+- **Fare Distribution:** Heavily right-skewed; most rides are inexpensive, but a few extreme fares exist.
+- **Distance Distribution:** Most trips are under 5 km, reflecting the urban nature of NYC ride behavior.
+- **Time Impact:** Clear cyclical patterns in ride demand tied to time of day and day of week.
+- **Correlation:** Strong positive correlation between distance and fare, but not strictly linear due to surges and short-distance flat rates.
 
-Python: For data cleaning, transformation, and feature generation
+**EDA Visualizations:**
 
-Power BI: For dynamic visualization and dashboard development
+![EDA Histogram](pictures/eda_histogram.png)  
+![EDA Boxplot](pictures/eda_boxplot.png)
 
-Python Libraries: pandas, numpy, matplotlib, seaborn
+---
 
-Analysis Steps:
+## Fare Changes Over Time
 
-Data loading and cleansing
+Fare analysis focused on identifying pricing trends and demand-related spikes.
 
-Outlier removal using IQR
+**Observations:**
 
-Time-based feature extraction (hour, weekday, month)
+- **Rush Hours:** Fares rise between 7–9 AM and 5–8 PM, consistent with commute patterns.
+- **Late-Night Surges:** Weekend late-night rides often show elevated fare levels, likely due to nightlife activity and fewer available drivers.
+- **Outlier Events:** Isolated spikes in fare often point to airport runs or surge pricing events (weather, demand imbalance).
 
-Season tagging and peak-hour flags
+**Visual Tools Used:** Line charts, boxplots, and histograms helped to isolate periods with unusual fare behavior.
 
-![Data loading](image.png)
-![Data cleaning](image-1.png)
+![Fare Changes](pictures/fare_changes.png)
 
-4. Exploratory Data Analysis Highlights
+---
 
-Before building the dashboard, a thorough exploratory data analysis (EDA) was conducted using Python to understand the structure, distribution, and relationships in the dataset.
+## Ride Trends by Hour, Day, Season
 
-Descriptive Statistics:
+Time-of-day and calendar-based patterns are critical for workforce planning and promotions.
 
-Summarized measures like average values, variation, and common trends across the dataset.
+- **Hourly Trends:** Gradual rise in rides from early morning to peak in the evening.
+- **Day-of-Week Trends:** Friday shows a surge, possibly due to work-week closure and leisure trips. Saturday and Sunday reflect late-night demand.
+- **Seasonal Variation:** Spring and summer have higher ride counts, especially in afternoon and evening.
 
-Revealed that a large portion of trips had low to moderate fare amounts and short distances.
+This time-based view supports scheduling and helps Uber align marketing campaigns with natural demand cycles.
 
-Data Distribution and Outliers:
+![Hourly Trends](pictures/hourly_trends.png)
 
-Fare distribution showed a clear skew with occasional very high values.
+---
 
-Distance data indicated a majority of short trips.
+## Seasonal and Weather Effects
 
-Boxplots and histograms were used to highlight extreme values and clusters.
+While real weather data was unavailable, season-based proxies helped approximate its effects.
 
-Temporal Analysis:
+**Insights:**
 
-Most rides took place during typical commuting hours and evenings.
+- **Spring:** Rebound in activity after winter. Tourists and outdoor mobility increase ride counts.
+- **Summer:** Evening rides peak due to extended daylight, events, and tourism.
+- **Autumn:** Slight decline in volume but rise in fare — suggesting longer or premium trips.
+- **Winter:** Drop in early morning rides, likely due to weather deterrents or reduced commuting.
 
-Fridays and weekends showed higher demand overall.
+This section highlights how external context affects urban mobility patterns and supports fare prediction modeling.
 
-Correlation Checks:
+![Seasonal Changes](pictures/seasonal_effects.png)
 
-A visible relationship between fare and distance was observed.
+---
 
-Moderate patterns found between fare levels and time-of-day indicators.
+## Geographic Ride Patterns
 
-This EDA phase shaped the feature engineering strategy and guided the visuals used in Power BI.
+Using location data, spatial trends were explored to identify zones of high and low activity.
 
-![EDA](image.png)
-![EDA](image-1.png)
-5. Fare Changes Over Time
+**Key Observations:**
 
-General Fare Behavior:
+- High-density clusters near **Manhattan, JFK Airport**, and central business areas.
+- Sparse ride density in boroughs farther from the city core.
+- Indicates both opportunity for service expansion and the need for driver rebalancing strategies.
 
-Fares tend to concentrate around lower values but show occasional spikes associated with long-distance travel or high-demand periods.
+Heatmaps and geospatial visuals made it easier to pinpoint Uber’s busiest corridors and underserved regions.
 
-Hourly Trends:
+![Geographic Heatmap](pictures/geographic_patterns.png)
 
-Fare levels increase during morning and evening commuting hours.
+---
 
-Slight surges may occur late at night on weekends.
+## Power BI Dashboard Design
 
-Fare Distribution:
+**Dashboard Title:** Tracy Uwase 27105 – Uber NYC Analysis  
 
-The majority of rides fall within a standard range, though outliers exist that reflect unique travel conditions.
+The dashboard was developed to be intuitive and insight-rich, allowing users to filter by time, fare level, and location.
 
-Visualization tools like box plots helped reveal and analyze these patterns.
-![Fare changes](image.png)
+**Design Features:**
 
-6. Ride Trends by Hour, Day, Season
+- **Time Filters:** Hourly, daily, monthly views  
+- **Distribution Charts:** Fare and distance analysis  
+- **Maps:** Visualize city zones with high/low ride frequency  
+- **Slicers:** Interactive selection by season or peak/off-peak  
 
-Hourly Trends:
+**User Experience Focus:**
 
-Ride volume steadily increases through the morning, peaking in the evening.
+- Easy drill-down from aggregate to specific views  
+- Consistent styling for clarity  
+- Ideal for executives, analysts, and operations managers
 
-The quietest hours are typically between late night and early morning.
+![Power BI Overview](pictures/powerbi_dashboard.png)
 
-Daily Patterns:
+---
 
-Rides are most frequent at the end of the workweek.
+## DAX Formulas and Measures
 
-Weekends reflect a shift toward late-night travel demand.
+To enhance interactivity and real-time insights in Power BI, DAX formulas were applied for dynamic aggregation.
 
-Seasonal Ride Volume:
+**Custom Calculations:**
 
-Some seasons demonstrate higher overall activity, especially those associated with good weather or travel seasons.
+- **Time of Day Classification:** Based on hour (e.g., Morning = 5–11 AM)  
+- **Season Tagging:** Spring, Summer, Autumn, Winter based on month  
+- **Average Fare Metrics:** By hour, weekday, and season  
+- **Peak Ride Count:** Track volume during specific time slots  
+- **Dynamic Filtering:** Enabled via slicers and measures
 
-Periods with extreme weather correlate with reduced ride frequency.
+These measures allowed the dashboard to adapt instantly to user inputs.
 
-![Ride](image.png)
-7. Seasonal and Weather Effects
+![DAX Measures](pictures/dax_calculations.png)
 
-Although actual weather data wasn't included, seasonal categorizations serve as a strong proxy.
+---
 
-Spring: A period of increased mobility, likely linked to tourism and outdoor activity.
+## Business Insights and Implications
 
-Summer: Evening rides remain consistent due to longer daylight and social events.
+This project translates technical results into strategic recommendations:
 
-Autumn: Higher average fare levels suggest changes in ride types or distances.
+- **Fare Management:** Use time-based fare segmentation to increase revenue without sacrificing affordability.  
+- **Driver Allocation:** Align driver shifts with peak periods and high-demand locations like airports.  
+- **Customer Retention:** Offer personalized discounts during known low-volume hours.  
+- **Expansion Strategy:** Use location data to identify and test new service zones.  
+- **Predictive Modeling:** Build systems that forecast surge pricing windows and pre-position drivers accordingly.
 
-Winter: Reduced morning activity may reflect weather-related delays or deterrents.
-![Season changes](image.png)
+These insights can help Uber reduce inefficiencies, improve rider satisfaction, and optimize operations.
 
-8. Geographic Ride Patterns
+---
 
-High activity in central business districts and transportation hubs.
+## Conclusion
 
-Frequent pickups near airports and popular commercial zones.
+This end-to-end analysis combines Python, statistical methods, and Power BI to tell a data-driven story about Uber rides in New York City. From identifying fare surges to understanding urban demand cycles, the project equips decision-makers with actionable insights. The interactive dashboard allows ongoing exploration of trends, making this solution a valuable tool for strategic planning and operations optimization.
 
-Lower ride density in outlying boroughs and less urbanized areas.
+---
 
-These patterns guide efficient allocation of drivers and targeted service improvements.
-![Weather effects](image.png)
 
-9. Power BI Dashboard Design
-
-Dashboard Name: Tracy Uwase 27105
-
-Visual Features:
-
-Hourly and daily ride and fare trends
-
-Fare distribution analysis
-
-Heatmaps for spatial and temporal clusters
-
-Filters for key time and location dimensions
-
-Geospatial mapping for urban demand zones
-
-User Experience:
-
-Highly interactive with smooth filtering and drilldowns
-
-Designed for clarity, accessibility, and professional use
-
-![Uber data overview](image.png)
-
-10. DAX Formulas and Measures
-
-To support dynamic calculations and interactivity within the Power BI dashboard, several DAX (Data Analysis Expressions) formulas were implemented:
-
-Time-Based Measures:
-
-Calculations to group rides by hour, day, month, and season.
-
-Dynamic categorization of peak and off-peak periods.
-
-Fare Aggregates:
-
-Average fare by hour of day, day of week, and season.
-
-Minimum and maximum fare per time block.
-
-Custom Columns:
-
-Time of day classification (morning, afternoon, evening, night).
-
-Season assignment based on ride month.
-
-Interactivity Enhancements:
-
-Slicers controlled by DAX-based tables for clean filtering.
-
-Measures for count of rides and total fare for selected timeframes or locations.
-
-These calculations enhanced the user’s ability to explore patterns dynamically and supported clean, aggregated visuals in the dashboard.
-
-![DAX](image.png)
-
-11. Business Insights and Implications
-
-Fare Management: Adjust pricing logic based on usage rhythms across time and season.
-
-Driver Allocation: Prioritize driver availability in high-demand corridors and transit nodes.
-
-Marketing Focus: Leverage downtime periods with incentives and promotions.
-
-Geospatial Strategy: Use regional trends to uncover service gaps and areas for growth.
-
-Forecasting Models: Build predictive systems using volume and fare trends to anticipate surges.
-
-12. Conclusion
-
-This detailed analysis, supported by Python and Power BI, provides actionable insights into Uber ride behavior across NYC. The study examined how time, distance, and seasons affect ride volume and fare patterns. The dashboard  enables exploration of key metrics, helping Uber teams optimize operations and enhance rider experience.
