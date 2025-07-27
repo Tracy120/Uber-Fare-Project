@@ -99,7 +99,7 @@ Fare analysis focused on identifying pricing trends and demand-related spikes.
 
 **Visual Tools Used:** Line charts, boxplots, and histograms helped to isolate periods with unusual fare behavior.
 
-![Fare Changes](pictures/farechanges.png)
+![Fare Changes](pictures/fare.png)
 
 ---
 
