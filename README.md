@@ -130,7 +130,7 @@ While real weather data was unavailable, season-based proxies helped approximate
 
 This section highlights how external context affects urban mobility patterns and supports fare prediction modeling.
 
-![Seasonal Changes](pictures/season.png)
+![Seasonal Changes](pictures/seasons.png)
 
 ---
 
@@ -146,7 +146,7 @@ Using location data, spatial trends were explored to identify zones of high and 
 
 Heatmaps and geospatial visuals made it easier to pinpoint Uber’s busiest corridors and underserved regions.
 
-![Geographic Heatmap](pictures/Weather.png)
+![Geographic Heatmap](pictures/weather.png)
 
 ---
 
@@ -169,7 +169,7 @@ The dashboard was developed to be intuitive and insight-rich, allowing users to 
 - Consistent styling for clarity  
 - Ideal for executives, analysts, and operations managers
 
-![Power BI Overview](pictures/Uberoverview.png)
+![Power BI Overview](pictures/overview.png)
 
 ---
 
