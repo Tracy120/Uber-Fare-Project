@@ -66,8 +66,8 @@ This project bridges the gap between raw data and business value, turning millio
 
 **Data Preparation:**
 
-![Data loading](pictures/data_loading.png)  
-![Data cleaning](pictures/data_cleaning.png)
+![Data loading](pictures/dataloading.png)  
+![Data cleaning](pictures/datacleaning.png)
 
 ---
 
@@ -82,8 +82,8 @@ The exploratory analysis focused on uncovering trends, patterns, and anomalies i
 
 **EDA Visualizations:**
 
-![EDA Histogram](pictures/eda_histogram.png)  
-![EDA Boxplot](pictures/eda_boxplot.png)
+![EDA Histogram](pictures/EDA.png)  
+![EDA Boxplot](pictures/EDA2.png)
 
 ---
 
@@ -99,7 +99,7 @@ Fare analysis focused on identifying pricing trends and demand-related spikes.
 
 **Visual Tools Used:** Line charts, boxplots, and histograms helped to isolate periods with unusual fare behavior.
 
-![Fare Changes](pictures/fare_changes.png)
+![Fare Changes](pictures/farechanges.png)
 
 ---
 
@@ -113,7 +113,7 @@ Time-of-day and calendar-based patterns are critical for workforce planning and 
 
 This time-based view supports scheduling and helps Uber align marketing campaigns with natural demand cycles.
 
-![Hourly Trends](pictures/hourly_trends.png)
+![Hourly Trends](pictures/Ridetrends.png)
 
 ---
 
@@ -130,7 +130,7 @@ While real weather data was unavailable, season-based proxies helped approximate
 
 This section highlights how external context affects urban mobility patterns and supports fare prediction modeling.
 
-![Seasonal Changes](pictures/seasonal_effects.png)
+![Seasonal Changes](pictures/season.png)
 
 ---
 
@@ -146,7 +146,7 @@ Using location data, spatial trends were explored to identify zones of high and 
 
 Heatmaps and geospatial visuals made it easier to pinpoint Uber’s busiest corridors and underserved regions.
 
-![Geographic Heatmap](pictures/geographic_patterns.png)
+![Geographic Heatmap](pictures/Weather.png)
 
 ---
 
@@ -169,7 +169,7 @@ The dashboard was developed to be intuitive and insight-rich, allowing users to 
 - Consistent styling for clarity  
 - Ideal for executives, analysts, and operations managers
 
-![Power BI Overview](pictures/powerbi_dashboard.png)
+![Power BI Overview](pictures/Uberoverview.png)
 
 ---
 
@@ -187,7 +187,7 @@ To enhance interactivity and real-time insights in Power BI, DAX formulas were a
 
 These measures allowed the dashboard to adapt instantly to user inputs.
 
-![DAX Measures](pictures/dax_calculations.png)
+![DAX Measures](pictures/DAX.png)
 
 ---
 
